@@ -12,7 +12,7 @@ require('dotenv').config();
 // used below to set up Express static paths
 const path = require('path');
 
-// Express and Handlebars modules
+// load the express and express-handlebars modules
 const express = require('express');
 const exphbs = require('express-handlebars');
 
@@ -52,13 +52,17 @@ const sess = {
 };
 app.use(session(sess));
 
-// more Handlebars setup
+// Create 'ExpressHandlebars' instance with a default layout
 const hbs = exphbs.create({});
-// Set Handlebars as the default template engine.
+// Register `hbs` as our view engine using its bound 'engine()' function
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-// add Handlebars custom helpers here
-
+// register a custom helper for express-handlebars here
+const handlebars = require('handlebars');
+// this custom Handlebars helper returns a JQuery library string for special Date formatting
+handlebars.registerHelper('format_date', function(date) {
+  return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
+});
 
 // set up all Express built-in middleware methods here
 // 'express.urlencoded([options])' is a built-in middleware function in Express
