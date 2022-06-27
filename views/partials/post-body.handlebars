@@ -1,0 +1,14 @@
+<div class="card mt-3">
+	<div class="card-header">
+		<p class="card-text date"> {{format_date created_at}}</p>
+		<h6 class="text-dark card-subtitle">
+			<i class="fas fa-user mr-2"></i>
+			{{user.username}}
+		</h6>
+		<h4 class="mt-2"><a
+				href="/post/{{id}}"
+				class="post-link"
+			>{{title}}</a></h4>
+	</div>
+	<p class="card-body">{{post_content}}</p>
+</div>
