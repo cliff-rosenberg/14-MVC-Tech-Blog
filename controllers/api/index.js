@@ -5,8 +5,10 @@
 const router = require('express').Router();
 
 // set up route files here
+const userRoutes = require('./userRoutes');
 
 // then set up Express router with all routes
+router.use('/users', userRoutes);
 
 // export
 module.exports = router;
