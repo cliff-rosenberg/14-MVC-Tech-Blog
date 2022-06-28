@@ -61,7 +61,10 @@ app.set('view engine', 'handlebars');
 const handlebars = require('handlebars');
 // this custom Handlebars helper returns a JQuery library string for special Date formatting
 handlebars.registerHelper('format_date', function(date) {
-  return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
+  const month = new Date(date).getMonth() + 1;
+  const day = new Date(date).getDate();
+  const year = new Date(date).getFullYear();
+  return `${month}/${day}/${year}`;
 });
 
 // set up all Express built-in middleware methods here
