@@ -14,7 +14,7 @@ const sequelize = require("../config/connection");
 
 //* this is the base Express route when the "homepage.handlebars" loads
 router.get('/', async (req, res) => {
-    console.log('route for homepage rendered in homeRoutes');
+    console.log("\n", "\x1b[33m", "Route for homepage rendered in homeRoutes", "\x1b[0m", "\n");
     try {
         const postData = await Post.findAll({
             attributes: ["id", "title", "post_content", "created_at"],
@@ -40,11 +40,11 @@ router.get('/', async (req, res) => {
             ],
         });
         const posts = postData.map((post) => post.get({ plain: true }));
+        console.log(req.session.username);
         res.render('homepage', {
             posts,
             username: req.session.username,
-            logged_in: req.session.loggedIn,
-            title: "Home"
+            logged_in: req.session.loggedIn
         });
     } catch (err) {
         // returns a '500 Internal Server Error' response
@@ -54,6 +54,7 @@ router.get('/', async (req, res) => {
 
 //* Express route for user Login
 router.get('/login', (req, res) => {
+    console.log("\n", "\x1b[33m", "Route for login rendered in homeRoutes", "\x1b[0m", "\n");
     // If the user is already logged in, redirect to the homepage
     // will load if 'req.session.loggedIn' evaluates to TRUE
     if (req.session.loggedIn) {
@@ -61,11 +62,14 @@ router.get('/login', (req, res) => {
       return;
     }
     // Otherwise, render the 'login' Handlebars template
-    res.render('login');
+    res.render('login', {
+        username: req.session.username,
+    });
 });
 
 //* Express route for user signup
 router.get('/signup', (req, res) => {
+    console.log("\n", "\x1b[33m", "Route for sign-up rendered in homeRoutes", "\x1b[0m", "\n");
     // If the user is already logged in, redirect to the homepage
     // will load if 'req.session.loggedIn' evaluates to TRUE
     if (req.session.loggedIn) {
@@ -73,7 +77,9 @@ router.get('/signup', (req, res) => {
       return;
     }
     // Otherwise, render the 'login' Handlebars template
-    res.render('signup');
+    res.render('signup', {
+        username: req.session.username,
+    });
 });
 
 module.exports = router;
