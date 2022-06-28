@@ -64,4 +64,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//* Express route for user signup
+router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect to the homepage
+    // will load if 'req.session.loggedIn' evaluates to TRUE
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    // Otherwise, render the 'login' Handlebars template
+    res.render('signup');
+});
+
 module.exports = router;
