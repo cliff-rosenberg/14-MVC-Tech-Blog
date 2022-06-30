@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 // set up routes here
 const apiRoutes = require("./api")
-const homeRoutes = require('./homeRoutes.js');
+const homeRoutes = require('./homeRoutes');
 
 // the "Home Routes" do not need the "/api" prefix
 router.use('/', homeRoutes);
