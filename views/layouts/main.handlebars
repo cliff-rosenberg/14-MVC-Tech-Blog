@@ -13,33 +13,7 @@
 </head>
 <body>
   {{!-- Main Navbar menu here --}}
-  <nav class="navbar navbar-expand-md bg-primary text-dark bg-opacity-25">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">Tech Blog</span>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-          {{#if logged_in}}
-          <button type="button" class="btn btn-outline-danger btn-sm ms-2" id="logout">Logout</button>
-          {{else}}
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          {{/if}}
-        </ul>
-        {{#if logged_in}}
-        <div class="d-flex align-middle me-3">
-        <span>User: {{username}}</span>
-        </div>
-        {{/if}}
-      </div>
-    </div>
-  </nav>
+  {{>main-menu}}
   {{!-- end Main Navbar menu here --}}
   <main class="container-fluid mt-1 ms-1">
       <!-- Render the sub layout -->
