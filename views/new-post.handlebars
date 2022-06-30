@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="col-sm-6">
+		<div class="card">
+			<h3 class="card-header">Create New Post</h3>
+			<form class="card-body d-flex flex-column" method="POST" action="/api/posts/new">
+				<div class="row mb-3">
+					<div class="col-4 mb-3">
+					<input type="text" id="title" name="title" class="form-input" placeholder="Post Title"/>
+					</div>
+					<textarea id="post_content" name="post_content" class="form-input" placeholder="Make a post..."></textarea>
+				</div>
+				<button type="submit" class="btn btn-sm btn-primary">Post</button>
+			</form>
+		</div>
+	</div>
+</div>
