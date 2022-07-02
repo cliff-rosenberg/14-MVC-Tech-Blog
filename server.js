@@ -52,7 +52,7 @@ const sess = {
 };
 app.use(session(sess));
 
-// Create 'ExpressHandlebars' instance with a default layout
+// Create 'Express-Handlebars' instance with a default layout
 const hbs = exphbs.create({});
 // Register `hbs` as our view engine using its bound 'engine()' function
 app.engine('handlebars', hbs.engine);
