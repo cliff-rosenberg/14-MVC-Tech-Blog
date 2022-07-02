@@ -1,0 +1,26 @@
+{{> post-body post}}
+
+{{#if logged_in}}
+    <div class="card">
+        <h3 class="card-header"></h3>
+        <form class="card-body comment-form" id="comment-form">
+            <div class="form-group">
+                <input class="col-12" type="text" id="comment" id="comment-body" name="comment-body"
+                    placeholder="Enter a comment..."></input>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-sm btn-primary mt-2" id="post-comment">
+                    Submit Comment <i class="fa fa-reply"></i></button>
+            </div>
+        </form>
+    </div>
+{{/if}}
+<div class="row justify-content-center">
+    <div class="col-10">
+        {{> comments post.comments}}
+    </div>
+</div>
+
+{{#if logged_in}}
+    <script src="/js/comment-save.js"></script>
+{{/if}}
