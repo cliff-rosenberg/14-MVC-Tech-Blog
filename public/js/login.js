@@ -8,12 +8,13 @@ const loginFormHandler = async (event) => {
   // tells the user agent that if the event does not get explicitly handled,
   // its default action should not be taken as it normally would be.
   event.preventDefault();
-  // this code below will remove any leading ro trailing spaces
+  // this code below will remove any leading or trailing spaces
   // in the 'email' and 'passowrd' fields
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
+    // the 'fetch' send User login info to the login API
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
@@ -29,6 +30,4 @@ const loginFormHandler = async (event) => {
 };
 
 // add the 'Event Listeners' to the page
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
