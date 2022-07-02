@@ -1,8 +1,9 @@
+{{!-- This Handlebars partial renders each post on the 'Dashboard' page --}}
 <div class="col-6">
     <div class="card mt-3">
         <div class="card-body text-center">
-            <h3>Post Title: <a href="/api/dashboard/edit/{{id}}">{{title}}</a></h3>
-            <p>Date Created: {{format_date created_at}}</p>
+            <span class="fw-light fs-4">Post Title: </span><span class="fs-4"><a href="/api/dashboard/edit/{{id}}" data-toggle="tooltip" data-bs-animation="true" title="Click to load the post..." class="link-info text-decoration-none">{{title}}</a></span>
+            <p class="fw-lighter">Date Created: {{format_date created_at}}</p>
         </div>
     </div>
 </div>
