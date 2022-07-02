@@ -41,7 +41,10 @@ router.get("/", withAuth, async (req, res) => {
 				attributes: ["username"],
 			},
 		],
-	})
+	});
+	// By default Sequelize returns lots of metadata
+    // To turn medatada off, we use the plain: true option
+	// also use 'map' with findAll
     const posts = postData.map((data) => data.get({ plain: true }));
 			res.render("dashboard", {
 				posts,
@@ -101,6 +104,8 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 			res.status(404).json({ message: "No post found with this id" });
 			return;
 		}
+		// By default Sequelize returns lots of metadata
+        // To turn medatada off, we use the plain: true option
 		const post = postData.get({ plain: true });
 			res.render("editing-post", {
 				post,
