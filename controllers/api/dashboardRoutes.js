@@ -14,6 +14,7 @@ const withAuth = require('../../utils/auth');
 //* user_id should match the post data
 //* this is for the user 'Dashboard'
 router.get("/", withAuth, async (req, res) => {
+	console.log("\n", "\x1b[33m", "Route for base Dashboard rendered", "\x1b[0m", "\n");
 	try {
     const postData = await Post.findAll({
 		where: {
@@ -57,6 +58,7 @@ router.get("/", withAuth, async (req, res) => {
 //* this renders the 'New Post' page view
 //* allows the logged in user to enter a new post
 router.get("/new", withAuth, (req, res) => {
+	console.log("\n", "\x1b[33m", "Triggered route for New Posts in dashboardRoutes", "\x1b[0m", "\n");
 	// render the 'New Post' page
 	res.render("new-post", {
 		username: req.session.username,
@@ -67,6 +69,7 @@ router.get("/new", withAuth, (req, res) => {
 //* this route allows the logged in User
 //* to edit their posts in the 'Dashboard' page
 router.get("/edit/:id", withAuth, async (req, res) => {
+	console.log("\n", "\x1b[33m", "Triggered route to Edit a Post in dashboardRoutes", "\x1b[0m", "\n");
 	try {
 		const postData = await Post.findOne({
 		where: {
@@ -101,6 +104,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 		const post = postData.get({ plain: true });
 			res.render("editing-post", {
 				post,
+				edit_id: req.params.id,
 				username: req.session.username,
 				logged_in: req.session.loggedIn,
 			});
