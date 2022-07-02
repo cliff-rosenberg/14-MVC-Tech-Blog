@@ -1,0 +1,20 @@
+{{!-- This is the card where the Comments for a post are rendered --}}
+<div>
+  <h2 class="mt-1">Comments</h2>
+  {{#each this}}
+    <div class="card">
+      <div class="card-header">
+        <h6 class=" mt-2 text-dark card-subtitle">
+          <i class="fa fa-comments"></i>
+          {{user.username}}
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="text">
+          {{comment_body}}
+        </div>
+      </div>
+    </div>
+    <p class="card-footer fw-lighter">Comment made by {{user.username}} on {{format_date created_at}}</p>
+  {{/each}}
+</div>
