@@ -88,7 +88,7 @@ router.get('/find', withAuth, async (req, res) => {
     }
 });// end route
 
-//* this will UPDATE and existing post when given an ID
+//* this will UPDATE an existing post when given an ID
 router.post('/update/', withAuth, async (req, res) => {
     console.log("\n", "\x1b[33m", "Triggered route to update a Post in postRoutes", "\x1b[0m", "\n");
     try {
