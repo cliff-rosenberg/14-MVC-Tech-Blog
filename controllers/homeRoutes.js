@@ -56,6 +56,7 @@ router.get('/', async (req, res) => {
 
 //* Express route for adding a Comment to a post
 router.get("/post/:id", async (req, res) => {
+    console.log("\n", "\x1b[33m", "Route for adding comments rendered in homeRoutes", "\x1b[0m", "\n");
     try {
         // find a post by ID if the link is clicked on when on "homepage"
         const postData = await Post.findOne({
