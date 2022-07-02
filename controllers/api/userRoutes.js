@@ -10,6 +10,7 @@ const router = require('express').Router();
 
 //* Express route to CREATE new user
 router.post('/', async (req, res) => {
+  console.log("\n", "\x1b[33m", "Triggered route to create a new User in userRoutes", "\x1b[0m", "\n");
   try {
     const dbUserData = await User.create({
       username: req.body.username,
@@ -35,6 +36,7 @@ router.post('/', async (req, res) => {
 //* Express route to do user login
 //* from the "login.handlebars" template form
 router.post('/login', async (req, res) => {
+  console.log("\n", "\x1b[33m", "Triggered route to login registered User in userRoutes", "\x1b[0m", "\n");
   try {
     // look up user in database
     const dbUserData = await User.findOne({
@@ -78,6 +80,7 @@ router.post('/login', async (req, res) => {
 
 //* User logout
 router.post('/logout', (req, res) => {
+  console.log("\n", "\x1b[33m", "Triggered route to logout a User in userRoutes", "\x1b[0m", "\n");
   // When the user logs out, destroy the session
   if (req.session.loggedIn) {
     req.session.destroy(() => {
