@@ -13,7 +13,7 @@ const withAuth = require('../../utils/auth');
 
 //* find all Comments
 router.get('/', async (req, res) => {
-    console.log("\n", "\x1b[33m", "Route to find all Comments rendered", "\x1b[0m", "\n");
+    console.log("\n", "\x1b[33m", "Route to find all Comments rendered in commentRoutes", "\x1b[0m", "\n");
     try {
         const commentData = await Comment.findAll({})
         res.json(commentData)
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 
 //* find all comments by ID
 router.get('/:id', async (req, res) => {
-    console.log("\n", "\x1b[33m", "Route to find Comments by ID rendered", "\x1b[0m", "\n");
+    console.log("\n", "\x1b[33m", "Route to find Comments by ID rendered in commentRoutes", "\x1b[0m", "\n");
     try {
         const commentData = await Comment.findAll({
             where: {
@@ -42,7 +42,7 @@ router.get('/:id', async (req, res) => {
 //* post a new comment
 //* but only for logged in users
 router.post('/', withAuth, async (req, res) => {
-    console.log("\n", "\x1b[33m", "Route to post new Comment rendered", "\x1b[0m", "\n");
+    console.log("\n", "\x1b[33m", "Route to post new Comment rendered in commentRoutes", "\x1b[0m", "\n");
     try {
         if (req.session) {
             const commentData =  await Comment.create({
@@ -84,7 +84,7 @@ router.put('/:id', withAuth, async (req, res) => {
 //* delete a comment
 //* only allowed for logged in users
 router.delete('/:id', withAuth, async (req, res) => {
-    console.log("\n", "\x1b[33m", "Route to delete one Comment rendered", "\x1b[0m", "\n");
+    console.log("\n", "\x1b[33m", "Route to delete one Comment rendered in commentRoutes", "\x1b[0m", "\n");
     try {
         const commentData = await Comment.destroy({
             where: {
