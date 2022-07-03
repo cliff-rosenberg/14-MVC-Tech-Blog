@@ -1,5 +1,6 @@
+{{!-- this is a template to render a post with the associate comments --}}
 {{> post-body post}}
-
+{{!-- this is only rendered if the user is already logged in --}}
 {{#if logged_in}}
     <div class="card">
         <h3 class="card-header"></h3>
@@ -15,12 +16,13 @@
         </form>
     </div>
 {{/if}}
+{{!-- render the comments here --}}
 <div class="row justify-content-center">
     <div class="col-10">
         {{> comments post.comments}}
     </div>
 </div>
-
+{{!-- if user is logged in, then load the helper script to save comments --}}
 {{#if logged_in}}
     <script src="/js/comment-save.js"></script>
 {{/if}}
