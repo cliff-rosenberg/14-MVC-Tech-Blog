@@ -32,24 +32,31 @@ Can also be installed locally by copying directory structure as-is, then doing a
 ## Screenshots
 
 Base page
+
 ![./assets/images/screenshot1.png](./assets/images/screenshot1.png)
 
 User login page
+
 ![./assets/images/screenshot4.png](./assets/images/screenshot4.png)
 
 User now logged in
+
 ![./assets/images/screenshot2.png](./assets/images/screenshot2.png)
 
 Add a comment to a post
+
 ![./assets/images/screenshot3.png](./assets/images/screenshot3.png)
 
 User 'Dashboard' page
+
 ![./assets/images/screenshot5.png](./assets/images/screenshot5.png)
 
 Editing a post
+
 ![./assets/images/screenshot6.png](./assets/images/screenshot6.png)
 
 User sign-up page
+
 ![./assets/images/screenshot7.png](./assets/images/screenshot7.png)
 
 ## Usage
