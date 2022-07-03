@@ -27,7 +27,7 @@ This is a simple blog using the Model-View-Controller
 
 Project is hosted on Heroku at: 
 
-Can also be installed locally by copying directory structure as-is, then doing a npm install in the base directory to install necessary dependancies. Application database is MySql, and the database container can be created by navigating to the `/db` directory and then using the MySQL command line utility and the `SOURCE` command to create it. Data tables can be seeded into the container after this my navigating to the `/seeds` directory and using the command `node seed.js` to create them.
+Can also be installed locally by copying directory structure as-is, then doing a `npm install` in the base directory to install necessary dependancies. Application database is MySql, and the database container can be created by navigating to the `/db` directory and then using the MySQL command line utility and the `SOURCE` command to create it. Data tables can be seeded into the container after this by navigating to the `/seeds` directory and using the command `node seed.js` to create them.
 
 ## Screenshots
 
@@ -61,7 +61,7 @@ User sign-up page
 
 ## Usage
 
-To run locally: The app server is launched by Node, type the command 'node server.js' to start the back-end. Then launch a web browser and go to the URL 'localhost:3001/' to get the inital page.
+To run when installed locally: The app server is launched by Node, type the command 'node server.js' to start the back-end. Then launch a web browser and go to the URL 'localhost:3001/' to get the inital page.
 
 ## Credits
 
