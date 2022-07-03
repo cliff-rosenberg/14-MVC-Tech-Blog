@@ -9,9 +9,6 @@ const router = require('express').Router();
 // load the required models
 const { Post, User, Comment } = require("../models");
 
-// load Sequelize
-//const sequelize = require("../config/connection");
-
 //* this is the base Express route when the "homepage.handlebars" loads
 router.get('/', async (req, res) => {
     console.log("\n", "\x1b[33m", "Route for homepage rendered in homeRoutes", "\x1b[0m", "\n");

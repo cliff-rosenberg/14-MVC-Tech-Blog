@@ -1,5 +1,4 @@
 {{!-- This is the view for Editing or Deleting a Post --}}
-
 <div class="row">
   <div class="col-sm-6">
 		<div class="card">
@@ -21,8 +20,10 @@
 	</div>	
 </div>
 <input type="hidden" id="txtField" value="{{post.post_content}}"/>
+{{!-- this script is a hack to get the text from the post in database into the textarea tag field --}}
 <script>
    var myText = document.getElementById("txtField").value;
    document.getElementById("post_content").value = myText;
 </script>
+{{!-- load the helper to delete a Post --}}
 <script src="/js/deletePost.js"></script>
