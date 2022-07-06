@@ -21,8 +21,8 @@ Link: [MIT License](https://opensource.org/licenses/MIT)
 
 ## Description
 
-This is a simple blog using the Model-View-Controller 
-     
+A simple "Tech Blog" website using the Model-View-Controller format. A MySQL database is used to store User data, as well as Posts and Comments on those Posts. Database modelling is done through the Sequelize ORM for MySQL. The API ("Controller") functions are accessed using Express.js web application framework. The "View" functions are provided by Handlebars.js templating system.
+
 ## Installation
 
 Project is hosted live on Heroku at: [https://mysterious-sea-13726.herokuapp.com/](https://mysterious-sea-13726.herokuapp.com/)
