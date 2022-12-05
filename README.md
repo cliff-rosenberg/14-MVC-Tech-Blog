@@ -25,7 +25,7 @@ A simple "Tech Blog" website using the Model-View-Controller format. A MySQL dat
 
 ## Installation
 
-Project is hosted live on Heroku at: [https://mysterious-sea-13726.herokuapp.com/](https://mysterious-sea-13726.herokuapp.com/)
+NOTE: As of November 2022, Heroku has no "free" accounts, so the demo application has been taken offline until another suitable host can be found.
 
 Can also be installed locally by copying directory structure as-is, then doing a `npm install` in the base directory to install necessary dependancies. Application database is MySql, and the database container can be created by navigating to the `/db` directory and then using the MySQL command line utility and the `SOURCE` command to create it. Data tables can be seeded into the container after this by navigating to the `/seeds` directory and using the command `node seed.js` to create them.
 
